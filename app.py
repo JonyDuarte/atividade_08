@@ -9,27 +9,40 @@
 - Peso
 - Altura"""
 
+
 # Lista
-usuarios = [
-    {
-# Coleta de dados do usuário
-        atributos [0]: input("Nome: "),
-        atributos [1]: input("Idade: "),
-        atributos [2]: input("CPF: "),
-        atributos [3]: input("E-mail: "),
-        atributos [4]: input("Profissão: "),
-        atributos [5]: input("Tipo Sanguíneo: "),
-        atributos [6]: input("Peso (kg): "),
-        atributos [7]: input("Altura (m): ")
-    }
-]
+usuarios = []
 
-usuario = {}
-for atributo in atributos:
-    usuario[atributo] = (f"Informe o valor do campo{atributo}: ")
-usuarios.append(usuario)
+while True:
+    # dicionário para armazenamento
+    usuario = {}
 
+    usuario["Nome"] = input("Digite o nome do usuário: ")
+    usuario["Idade"] = input("Digite a idade do usuário: ")
+    usuario["CPF"] = input("Digite o CPF do usuário: ")
+    usuario["E-mail"] = input("Digite o e-mail do usuário: ")
+    usuario["Profissão"] = input("Digite a profissão do usuário: ")
+    usuario["Tipo Sanguíneo"] = input("Digite o tipo sanguíneo do usuário: ")
+    usuario["Peso"] = input("Digite o peso do usuário (kg): ")
+    usuario["Altura"] = input("Digite a altura do usuário (metros): ")
+
+    # adiciona o usuário a lista
+    usuarios.append(usuario)
+
+    # Continuar cadastrando
+    continuar = input("Deseja cadastrar outro usuário? (s/n): ").lower()
+    if continuar != "s":
+        break
+
+# Saída dos dados dos usuários cadastrados
+print("\nUsuários cadastrados:")
 for usuario in usuarios:
-    print("")
-    for atributo in atributos:
+    print(f"Nome: {usuario['Nome']}")
+    print(f"Idade: {usuario['Idade']}")
+    print(f"CPF: {usuario['CPF']}")
+    print(f"E-mail: {usuario['E-mail']}")
+    print(f"Profissão: {usuario['Profissão']}")
+    print(f"Tipo Sanguíneo: {usuario['Tipo Sanguíneo']}")
+    print(f"Peso: {usuario['Peso']}")
+    print(f"Altura: {usuario['Altura']}\n")
 
